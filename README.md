@@ -1,7 +1,8 @@
-# ExceptionTimeDataSave
-geometry dash exception handler that will save game on crash
+<div align="center">
+    <img src="githubprev.png" alt="Logo" width="853" height="426">
 
-Made with curly-eureka, only for Windows.
+    Made with curly-eureka, only for Windows.
+</div>
 
 ## Install for geode
 put .geode file to GeometryDash/geode/mods
