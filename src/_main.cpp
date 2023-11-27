@@ -1,14 +1,13 @@
 ﻿#include "mod_utils.hpp"
-#include "hooks.hpp"
-#include "SimpleIni.h"
 using namespace cocos2d;
-using namespace cocos2d::extension;
 using namespace gd;
 
 LONG WINAPI VectoredExceptionHandler(_EXCEPTION_POINTERS* pExceptInfo) {
     //save game?
     GameManager::sharedState()->save();
     ModUtils::log("game saved");//save log why no
+    //who is it also ok
+    AppDelegate::sharedApplication()->trySaveGame();
     //level editor tries
     LevelEditorLayer* LevelEditorLayer_ = GameManager::sharedState()->getEditorLayer();
     if (LevelEditorLayer_) {
