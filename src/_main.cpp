@@ -36,7 +36,14 @@ BOOL WINAPI ConsoleHandler(DWORD CEvent) {
     return TRUE;
 }
 
+auto iAlreadyWas = false;
+
 LONG WINAPI VectoredExceptionHandler(_EXCEPTION_POINTERS* pExceptInfo) {
+    if(iAlreadyWas) {
+        log::error(__FUNCTION__", its me, im already was called so i return EXCEPTION_EXECUTE_HANDLER");
+        return EXCEPTION_EXECUTE_HANDLER;//hl shed
+    }
+    else iAlreadyWas = true;
     //save game
     SaveMethods();
     //error msg
@@ -60,7 +67,10 @@ LONG WINAPI VectoredExceptionHandler(_EXCEPTION_POINTERS* pExceptInfo) {
     }
     log::warn(buffer.str());
     //msg text makeup end
-    if (dontCare) return EXCEPTION_CONTINUE_EXECUTION;//came from 2.2 pc gdps... idk if needs here
+    if (dontCare) {
+        iAlreadyWas = false;
+        return EXCEPTION_CONTINUE_EXECUTION;//came from 2.2 pc gdps... idk if needs here
+    }
     return EXCEPTION_CONTINUE_SEARCH;
 }
 
