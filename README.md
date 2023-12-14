@@ -1,18 +1,12 @@
 <div align="center">
     <img src="githubprev.png">
-
-    Made with curly-eureka, only for Windows.
 </div>
 
-## Install for geode
-put .geode file to GeometryDash/geode/mods
+methods:
+- AppDelegate::trySaveGame
+- GManager::save
+- save current level
 
-[Download](geode/release/user95401.ExceptionTimeDataSave.geode)
+BONUS: **save game on console close**...
 
-## Install dll
-- just load it with any modloader
-
-[Download](ExceptionTimeDataSave.dll)
-
-# build
-learn here https://github.com/user95401/GMDModTemplate/wiki/Prepare
+[OLD VERSION WITH BOTH DLL-INJECTION AND GEODE SUPPORT](https://github.com/user95401/ExceptionTimeDataSave/tree/2d63d911680b07739fbe0a9eb49df06a611c4d43)
