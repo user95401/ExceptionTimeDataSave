@@ -4,8 +4,7 @@
 
 methods:
 - AppDelegate::trySaveGame
-- GManager::save
-- save current level
+- save current levels
 
 BONUS: **save game on console close**...
 

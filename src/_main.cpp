@@ -4,22 +4,16 @@ using namespace geode::prelude;
 void SaveMethods() {
     //save game?
     AppDelegate::sharedApplication()->trySaveGame();
-    //who is it also ok
-    GameManager::sharedState()->save();
 	//save log why no
     log::info("Game saved");
     //level editor tries
-    try {
-        LevelEditorLayer* LevelEditorLayer_ = GameManager::sharedState()->getEditorLayer();
+    if (LevelEditorLayer* LevelEditorLayer_ = GameManager::sharedState()->getEditorLayer()) {
         LevelEditorLayer_->m_editorUI->undoLastAction(CCNode::create());
         LevelEditorLayer_->m_editorUI->undoLastAction(CCNode::create());
         LevelEditorLayer_->m_editorUI->undoLastAction(CCNode::create());
         log::info("Was performed 3 undo actions in current level editor layer");
         EditorPauseLayer::create(LevelEditorLayer_)->saveLevel();
         log::info("Current level saved");
-    }
-    catch(const std::exception& e) {
-        log::warn(std::string("level saving failed... ") + e.what());
     }
 }
 

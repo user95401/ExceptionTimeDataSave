@@ -1,9 +1,10 @@
 {
 	"geode": "1.3.7",
-	"version": "v2.1.0",
+	"version": "v2.2.0",
 	"id": "user95401.exceptiontimedatasave",
 	"name": "ExceptionTimeDataSave",
 	"developer": "user95401",
 	"description": "exception handler that will save game on crash!!11!!1 yooo",
-	"repository": "https://github.com/user95401/ExceptionTimeDataSave"
+	"repository": "https://github.com/user95401/ExceptionTimeDataSave",
+	"early-load": true
 }
